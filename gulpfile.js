@@ -24,20 +24,21 @@ gulp.task("html", function () {
 
 //scripts add to build
 gulp.task("scripts", function () {
-  return gulp.src("src/js")
+  return gulp.src("src/js/*.js")
     .pipe(gulp.dest("build/js"));
 });
 
 //img add to build
-gulp.task("scripts", function () {
-  return gulp.src("src/img")
+gulp.task("img", function () {
+  return gulp.src("src/img/*")
     .pipe(gulp.dest("build/img"));
 });
 
 gulp.task("watch", function () {
-  gulp.watch("scss/*.scss", ["css"]);
+  gulp.watch("src/scss/*.scss", ["css"]);
   gulp.watch("src/*.html", ["html"]);
-  gulp.watch("js/*.js", ["scripts"]);
+  gulp.watch("src/js/*.js", ["scripts"]);
+  gulp.watch("src/img", ["img"]);
 });
 
 gulp.task("default", ["watch"]);
