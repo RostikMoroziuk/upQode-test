@@ -28,6 +28,12 @@ gulp.task("scripts", function () {
     .pipe(gulp.dest("build/js"));
 });
 
+//img add to build
+gulp.task("scripts", function () {
+  return gulp.src("src/img")
+    .pipe(gulp.dest("build/img"));
+});
+
 gulp.task("watch", function () {
   gulp.watch("scss/*.scss", ["css"]);
   gulp.watch("src/*.html", ["html"]);
