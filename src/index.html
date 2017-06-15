@@ -281,16 +281,67 @@
   </section>
   <!--Section end-->
 
-  <!--Footer-->
-  <footer class="footer">
-    <h2 class="footer--header">
-      get in <span class="footer--header-styled">touch</span>
+  <!--Footer (contacts)-->
+  <footer class="contact">
+    <h2 class="contact--header">
+      get in <span class="contact--header-styled">touch</span>
     </h2>
-    <h5 class="footer--description">
+    <h5 class="contact--description">
       Quisque fermentum, nisl mattis volutpat rhoncus, tellus est congue nibh, ut euismod quam nisi quis felis. Nullam at scelerisque
       tellus mattis volutpat rhoncus,
     </h5>
-    <div class="contacts js-map"></div>
+    <div class="contacts">
+      <!--Google map-->
+      <div class="js-map"></div>
+      <div class="container">
+        <!--Contact form-->
+        <div class="contact--info">
+          <!--Form for submit-->
+          <form action="post" class="contact--form">
+            <div class="user">
+              <input type="text" class="user--name" required>
+              <input type="email" class="user--email" required>
+            </div>
+            <textarea rows="5" class="message" required></textarea>
+            <div class="submit">
+              <div class="submit--check check">
+                <input type="checkbox" class="check--value">
+                <span class="check--text">I like your company</span>
+              </div>
+              <input type="submit" class="submit--button" value="Send">
+            </div>
+          </form>
+          <!--Company contacts-->
+          <div class="contact--details">
+            <div class="address">
+              <div class="address--street">69/A, Some Street Name</div>
+              <div class="address--city">Your city, code 01234</div>
+              <div class="address--country">Country Name</div>
+            </div>
+            <div class="phone">
+              <div class="phone--number">+880 123 456 78 98</div>
+              <div class="phone--number">+860 987 648 74 95</div>
+            </div>
+            <div class="email">
+              <div class="email--address">company@mail.com</div>
+              <div class="email--address">sales@mail.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Footer-->
+    <div class="footer">
+      <!--Copyright-->
+      <div class="footer--legal">Copyright © Company. All Rights Reserved  2016</div>
+      <!--Links-->
+      <ul class="footer--social">
+        <li><a href="#"><img src="#" alt="facebook"></a></li>
+        <li><a href="#"><img src="#" alt="google+"></a></li>
+        <li><a href="#"><img src="#" alt="twitter"></a></li>
+        <li><a href="#"><img src="#" alt="dribbble"></a></li>
+      </ul>
+    </div>
   </footer>
   <!--End footer-->
 
