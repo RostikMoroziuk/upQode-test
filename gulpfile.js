@@ -34,11 +34,18 @@ gulp.task("img", function () {
     .pipe(gulp.dest("build/img"));
 });
 
+//font add to build
+gulp.task("font", function () {
+  return gulp.src("src/font/*")
+    .pipe(gulp.dest("build/font"));
+});
+
 gulp.task("watch", function () {
   gulp.watch("src/scss/*.scss", ["css"]);
   gulp.watch("src/*.html", ["html"]);
   gulp.watch("src/js/*.js", ["scripts"]);
   gulp.watch("src/img", ["img"]);
+  gulp.watch("src/font", ["font"]);
 });
 
 gulp.task("default", ["watch"]);
