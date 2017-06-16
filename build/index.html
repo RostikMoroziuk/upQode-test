@@ -202,9 +202,9 @@
                 <i class="fa fa-circle-thin fa-stack-2x"></i>
                 <i class="fa fa-link fa-stack-1x"></i>
               </span>
-              <span class="fa-stack fa-lg details--image-inverse">
-                <i class="fa fa-circle-thin fa-stack-2x"></i>
-                <i class="fa fa-search-plus fa-stack-1x"></i>
+              <span class="fa-stack fa-lg details--image">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-search-plus fa-stack-1x details--image-inverse"></i>
               </span>
             </div>
           </div>
@@ -223,9 +223,9 @@
                 <i class="fa fa-circle-thin fa-stack-2x"></i>
                 <i class="fa fa-link fa-stack-1x"></i>
               </span>
-              <span class="fa-stack fa-lg details--image-inverse">
-                <i class="fa fa-circle-thin fa-stack-2x"></i>
-                <i class="fa fa-search-plus fa-stack-1x"></i>
+              <span class="fa-stack fa-lg details--image">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-search-plus fa-stack-1x details--image-inverse"></i>
               </span>
             </div>
           </div>
@@ -244,9 +244,9 @@
                 <i class="fa fa-circle-thin fa-stack-2x"></i>
                 <i class="fa fa-link fa-stack-1x"></i>
               </span>
-              <span class="fa-stack fa-lg details--image-inverse">
-                <i class="fa fa-circle-thin fa-stack-2x"></i>
-                <i class="fa fa-search-plus fa-stack-1x"></i>
+              <span class="fa-stack fa-lg details--image">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-search-plus fa-stack-1x details--image-inverse"></i>
               </span>
             </div>
           </div>
@@ -265,9 +265,9 @@
                 <i class="fa fa-circle-thin fa-stack-2x"></i>
                 <i class="fa fa-link fa-stack-1x"></i>
               </span>
-              <span class="fa-stack fa-lg details--image-inverse">
-                <i class="fa fa-circle-thin fa-stack-2x"></i>
-                <i class="fa fa-search-plus fa-stack-1x"></i>
+              <span class="fa-stack fa-lg details--image">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-search-plus fa-stack-1x details--image-inverse"></i>
               </span>
             </div>
           </div>
@@ -279,29 +279,34 @@
 
   <!--Our products section-->
   <section class="products">
+    <!--Products title-->
+    <div class="noise"></div>
+    <div class="products--title">
+      <h2 class="products--title-header title--header">our <span class="title--header-styled">products</span></h2>
+    </div>
+    <div class="svg">
+      <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" class="svg--field">
+        <defs>
+          <!--Gradient-->
+          <linearGradient id="grad1" gradientTransform="rotate(0)">
+            <stop offset="33%" style="stop-color:#503392;stop-opacity:.8" />
+            <stop offset="41%" style="stop-color:#55359b;stop-opacity:.8" />
+            <stop offset="50%" style="stop-color:#673ab7;stop-opacity:.8" />
+            <stop offset="100%" style="stop-color:#00bff3;stop-opacity:.8" />
+          </linearGradient>
+        </defs>
+        <path d="" fill="url(#grad1)" />
+      </svg>
+    </div>
+    <!--Products content-->
     <div class="container">
-      <!--Products title-->
-      <div class="products--title">
-        <h2 class="products--title-header title--header">our <span class="title--header-styled">products</span></h2>
-      </div>
-      <!--Products content-->
-      <div class="products--content">
+      <!--First page-->
+      <div class="products--content page1">
         <div class="row">
-          <!--1-->
-          <article class="product col-lg-4">
-            <div class="product--image">
-              <img src="#" alt="product" class="product--icon">
-            </div>
-            <div class="product--content">
-              <h3 class="product--title">title</h3>
-              <div class="product--mark">Best Product</div>
-              <div class="product--text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
-            </div>
-          </article>
           <!--2-->
           <article class="product col-lg-4">
             <div class="product--image">
-              <img src="#" alt="product" class="product--icon">
+              <img src="img/product2.png" alt="product" class="product--icon">
             </div>
             <div class="product--content">
               <h3 class="product--title">title</h3>
@@ -309,10 +314,10 @@
               <div class="product--text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
             </div>
           </article>
-          <!--3-->
+          <!--1-->
           <article class="product col-lg-4">
             <div class="product--image">
-              <img src="#" alt="product" class="product--icon">
+              <img src="img/product1.png" alt="product" class="product--icon">
             </div>
             <div class="product--content">
               <h3 class="product--title">title</h3>
@@ -323,7 +328,7 @@
           <!--4-->
           <article class="product col-lg-4">
             <div class="product--image">
-              <img src="#" alt="product" class="product--icon">
+              <img src="img/product4.png" alt="product" class="product--icon">
             </div>
             <div class="product--content">
               <h3 class="product--title">title</h3>
@@ -334,7 +339,18 @@
           <!--5-->
           <article class="product col-lg-4">
             <div class="product--image">
-              <img src="#" alt="product" class="product--icon">
+              <img src="img/product5.png" alt="product" class="product--icon">
+            </div>
+            <div class="product--content">
+              <h3 class="product--title">title</h3>
+              <div class="product--mark">Best Product</div>
+              <div class="product--text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
+            </div>
+          </article>
+          <!--3-->
+          <article class="product col-lg-4">
+            <div class="product--image">
+              <img src="img/product3.png" alt="product" class="product--icon">
             </div>
             <div class="product--content">
               <h3 class="product--title">title</h3>
@@ -345,7 +361,149 @@
           <!--6-->
           <article class="product col-lg-4">
             <div class="product--image">
-              <img src="#" alt="product" class="product--icon">
+              <img src="img/product6.png" alt="product" class="product--icon">
+            </div>
+            <div class="product--content">
+              <h3 class="product--title">title</h3>
+              <div class="product--mark">Best Product</div>
+              <div class="product--text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <!--Second page-->
+      <div class="products--content products--content-active page2">
+        <div class="row">
+          <!--1-->
+          <article class="product col-lg-4">
+            <div class="product--image">
+              <img src="img/product1.png" alt="product" class="product--icon">
+            </div>
+            <div class="product--content">
+              <h3 class="product--title">title</h3>
+              <div class="product--mark">Best Product</div>
+              <div class="product--text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
+            </div>
+          </article>
+          <!--2-->
+          <article class="product col-lg-4">
+            <div class="product--image">
+              <img src="img/product2.png" alt="product" class="product--icon">
+            </div>
+            <div class="product--content">
+              <h3 class="product--title">title</h3>
+              <div class="product--mark">Best Product</div>
+              <div class="product--text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
+            </div>
+          </article>
+          <!--3-->
+          <article class="product col-lg-4">
+            <div class="product--image">
+              <img src="img/product3.png" alt="product" class="product--icon">
+            </div>
+            <div class="product--content">
+              <h3 class="product--title">title</h3>
+              <div class="product--mark">Best Product</div>
+              <div class="product--text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
+            </div>
+          </article>
+          <!--4-->
+          <article class="product col-lg-4">
+            <div class="product--image">
+              <img src="img/product4.png" alt="product" class="product--icon">
+            </div>
+            <div class="product--content">
+              <h3 class="product--title">title</h3>
+              <div class="product--mark">Best Product</div>
+              <div class="product--text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
+            </div>
+          </article>
+          <!--5-->
+          <article class="product col-lg-4">
+            <div class="product--image">
+              <img src="img/product5.png" alt="product" class="product--icon">
+            </div>
+            <div class="product--content">
+              <h3 class="product--title">title</h3>
+              <div class="product--mark">Best Product</div>
+              <div class="product--text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
+            </div>
+          </article>
+          <!--6-->
+          <article class="product col-lg-4">
+            <div class="product--image">
+              <img src="img/product6.png" alt="product" class="product--icon">
+            </div>
+            <div class="product--content">
+              <h3 class="product--title">title</h3>
+              <div class="product--mark">Best Product</div>
+              <div class="product--text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <!--Third page-->
+      <div class="products--content page3">
+        <div class="row">
+          <!--1-->
+          <article class="product col-lg-4">
+            <div class="product--image">
+              <img src="img/product1.png" alt="product" class="product--icon">
+            </div>
+            <div class="product--content">
+              <h3 class="product--title">title</h3>
+              <div class="product--mark">Best Product</div>
+              <div class="product--text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
+            </div>
+          </article>
+          <!--6-->
+          <article class="product col-lg-4">
+            <div class="product--image">
+              <img src="img/product6.png" alt="product" class="product--icon">
+            </div>
+            <div class="product--content">
+              <h3 class="product--title">title</h3>
+              <div class="product--mark">Best Product</div>
+              <div class="product--text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
+            </div>
+          </article>
+          <!--3-->
+          <article class="product col-lg-4">
+            <div class="product--image">
+              <img src="img/product3.png" alt="product" class="product--icon">
+            </div>
+            <div class="product--content">
+              <h3 class="product--title">title</h3>
+              <div class="product--mark">Best Product</div>
+              <div class="product--text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
+            </div>
+          </article>
+          <!--4-->
+          <article class="product col-lg-4">
+            <div class="product--image">
+              <img src="img/product4.png" alt="product" class="product--icon">
+            </div>
+            <div class="product--content">
+              <h3 class="product--title">title</h3>
+              <div class="product--mark">Best Product</div>
+              <div class="product--text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
+            </div>
+          </article>
+          <!--2-->
+          <article class="product col-lg-4">
+            <div class="product--image">
+              <img src="img/product2.png" alt="product" class="product--icon">
+            </div>
+            <div class="product--content">
+              <h3 class="product--title">title</h3>
+              <div class="product--mark">Best Product</div>
+              <div class="product--text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
+            </div>
+          </article>
+          <!--6-->
+          <article class="product col-lg-4">
+            <div class="product--image">
+              <img src="img/product6.png" alt="product" class="product--icon">
             </div>
             <div class="product--content">
               <h3 class="product--title">title</h3>
@@ -356,10 +514,12 @@
         </div>
       </div>
       <!--Pagination-->
-      <div class="dots">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
+      <div class="row">
+        <div class="dots">
+          <div class="dots--dot" data-index="0"></div>
+          <div class="dots--dot dots--dot-active" data-index="1"></div>
+          <div class="dots--dot" data-index="2"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -367,49 +527,52 @@
 
   <!--Footer (contacts)-->
   <footer class="contact">
-    <h2 class="contact--header">
-      get in <span class="contact--header-styled">touch</span>
-    </h2>
-    <h5 class="contact--description">
-      Quisque fermentum, nisl mattis volutpat rhoncus, tellus est congue nibh, ut euismod quam nisi quis felis. Nullam at scelerisque
-      tellus mattis volutpat rhoncus,
-    </h5>
+    <div class="headers">
+      <h2 class="contact--header">
+        get in <span class="contact--header-styled">touch</span>
+      </h2>
+      <h5 class="contact--description">
+        Quisque fermentum, nisl mattis volutpat rhoncus, tellus est congue nibh, ut euismod quam nisi quis felis. Nullam at scelerisque
+        tellus mattis volutpat rhoncus,
+      </h5>
+    </div>
     <div class="contacts">
       <!--Google map-->
       <div class="js-map"></div>
-      <div class="container">
-        <!--Contact form-->
-        <div class="contact--info">
-          <!--Form for submit-->
-          <form action="post" class="contact--form">
-            <div class="user">
-              <input type="text" class="user--name" required>
-              <input type="email" class="user--email" required>
-            </div>
-            <textarea rows="5" class="message" required></textarea>
-            <div class="submit">
-              <div class="submit--check check">
+      <div class="map--filter"></div>
+      <!--Contact form-->
+      <div class="info">
+        <!--Form for submit-->
+        <form action="post" class="info--form">
+          <div class="user">
+            <input type="text" class="user--name user--input" required>
+            <input type="email" class="user--email user--input" required>
+          </div>
+          <textarea rows="5" class="message user--input" required></textarea>
+          <div class="submit">
+            <div class="submit--check check">
+              <div class="check--checkbox">
                 <input type="checkbox" class="check--value">
-                <span class="check--text">I like your company</span>
               </div>
-              <input type="submit" class="submit--button" value="Send">
+              <span class="check--text">I like your company</span>
             </div>
-          </form>
-          <!--Company contacts-->
-          <div class="contact--details">
-            <div class="address">
-              <div class="address--street">69/A, Some Street Name</div>
-              <div class="address--city">Your city, code 01234</div>
-              <div class="address--country">Country Name</div>
-            </div>
-            <div class="phone">
-              <div class="phone--number">+880 123 456 78 98</div>
-              <div class="phone--number">+860 987 648 74 95</div>
-            </div>
-            <div class="email">
-              <div class="email--address">company@mail.com</div>
-              <div class="email--address">sales@mail.com</div>
-            </div>
+            <input type="submit" class="submit--button" value="Send">
+          </div>
+        </form>
+        <!--Company contacts-->
+        <div class="info--details">
+          <div class="address">
+            <div class="address--street">69/A, Some Street Name</div>
+            <div class="address--city">Your city, code 01234</div>
+            <div class="address--country">Country Name</div>
+          </div>
+          <div class="phone">
+            <div class="phone--number">+880 123 456 78 98</div>
+            <div class="phone--number">+860 987 648 74 95</div>
+          </div>
+          <div class="email">
+            <div class="email--address">company@mail.com</div>
+            <div class="email--address">sales@mail.com</div>
           </div>
         </div>
       </div>
@@ -420,10 +583,10 @@
       <div class="footer--legal">Copyright © Company. All Rights Reserved 2016</div>
       <!--Links-->
       <ul class="footer--social">
-        <li><a href="#"><img src="#" alt="facebook"></a></li>
-        <li><a href="#"><img src="#" alt="google+"></a></li>
-        <li><a href="#"><img src="#" alt="twitter"></a></li>
-        <li><a href="#"><img src="#" alt="dribbble"></a></li>
+        <li><a href="#"><img src="img/facebook_S.png" alt="facebook"></a></li>
+        <li><a href="#"><img src="img/googleplus_S.png" alt="google+"></a></li>
+        <li><a href="#"><img src="img/twitter_S.png" alt="twitter"></a></li>
+        <li><a href="#"><img src="img/dribbble_S.png" alt="dribbble"></a></li>
       </ul>
     </div>
   </footer>

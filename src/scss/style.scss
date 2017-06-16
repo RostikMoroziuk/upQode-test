@@ -23,6 +23,10 @@ $indicatorBgColor: #b7b7b7;
 $blackColor: #232323;
 $advantagesColor: #999999;
 $cardColor: #503392;
+$dotColor: #d7d7d7;
+$btnColor: #373737;
+$contactColor: #f3f3f3;
+$copyColor: #7a7a7a;
 //Fonts
 $logoFont: "BEYNO",
 sans-serif;
@@ -180,11 +184,11 @@ body {
 //Cross-browser gradient effect 
 .carousel--filter {
   position: absolute;
-  width: 100%;
   height: 100%;
   top: 0;
   right: 0;
   z-index: 1;
+  width: 100%;
   background: linear-gradient(-71deg, #503392 0%, #55359b 23%, #673ab7 49%, #00bff3 100%);
   opacity: .8;
 }
@@ -222,23 +226,21 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
 //item in cards section (like, comment, flags..)
 .card {
   width: 200px;
   height: 270px;
   text-align: center;
-  border: 1px solid #ebebeb;
-  //relate for hovering block
+  border: 1px solid #ebebeb; //relate for hovering block
   position: relative;
-  overflow: hidden;
-  //Icon
+  overflow: hidden; //Icon
   &--img {
     color: $cardColor;
     font-size: 60px;
     font-weight: 400;
     margin: 20px 0;
-  }
-  //Text content with title
+  } //Text content with title
   &--content {
     text-align: center;
     width: 160px;
@@ -254,8 +256,7 @@ body {
       color: $advantagesColor;
       font-weight: 400;
       line-height: 20px;
-    }
-    //Visisible section on hover in card
+    } //Visisible section on hover in card
     &-hover {
       height: 0;
       width: 100%;
@@ -275,14 +276,253 @@ body {
   color: $cardColor;
 }
 
+//////////////
+//Our products section
+/////////////
+//Header in this section
+.products {
+  background: url("../img/bg-polygon.png") no-repeat center;
+  position: relative;
+  &--title {
+    height: 161px;
+    background: url("../img/header.png") no-repeat center;
+    position: relative;
+    text-align: center; //header
+    &-header {
+      margin-top: 20px;
+      font-size: 35px;
+      font-weight: 700;
+      line-height: 24px;
+      text-transform: uppercase;
+      color: white;
+      position: relative;
+      top: 50px;
+      z-index: 10;
+    }
+  }
+}
+
+.title--header-styled {
+  color: $yellowColor;
+}
+
+.noise {
+  background: url("../img/bg-noise.png") no-repeat center;
+  position: absolute;
+  opacity: .2;
+  width: 100%;
+  height: 100%;
+}
+
+.svg {
+  width: 100%;
+  height: 161px;
+  position: relative;
+  top: -161px;
+  z-index: 1;
+}
+
+//Our products
+.products {
+  &--content {
+    z-index: 1;
+  }
+  &--content {
+    display: none;
+    transition: opacity 1s;
+    opacity: 0;
+    &-active {
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+//Element of products
+.product {
+  display: flex;
+  &--image {
+    width: 145px;
+    height: 145px;
+    margin-right: 26px;
+    margin-bottom: 103px;
+  }
+  &--title {
+    color: $blackColor;
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  &--mark,
+  &--text {
+    font-weight: 400;
+    line-height: 20px;
+  }
+  &--mark {
+    color: $cardColor;
+    font-size: 16px;
+  }
+  &--text {
+    color: $advantagesColor;
+    font-size: 14px;
+  }
+}
+
+//Pagination 
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  z-index: 1;
+  position: relative;
+  &--dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: $dotColor;
+    margin-right: 7px;
+    &:hover {
+      cursor: pointer;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &-active {
+      background-color: $cardColor;
+    }
+  }
+}
 
 //////////////
 //Footer
 /////////////
+//Headers
+.headers {
+  width: 670px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.contact {
+  &--header {
+    font-size: 35px;
+    font-weight: 700;
+    color: $blackColor;
+    text-transform: uppercase;
+    &-styled {
+      color: $logoSubColor;
+    }
+  }
+  &--description {
+    font-size: 14px;
+    font-weight: 400;
+    color: $advantagesColor;
+  }
+}
+
+.contacts {
+  position: relative;
+}
+
 .contacts,
-.js-map {
+.js-map,
+.map--filter {
   height: 634px;
   width: 100%;
+}
+
+.map--filter {
+  background-color: rgba(0, 0, 0, 0.65);
+  position: absolute;
+  top: 0;
+}
+
+.info {
+  background-color: rgba(26, 26, 26, 0.53);
+  width: 945px;
+  height: 435px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  color: $indicatorBgColor;
+  &--form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+  }
+  &--details {
+    width: 30%;
+    color: $contactColor;
+  }
+}
+
+//User contact info
+.user {
+  display: flex;
+  justify-content: space-between;
+  &--input {
+    border-radius: 0;
+    border: 2px solid #9a9999;
+    background-color: transparent;
+  }
+  &--name,
+  &--email {
+    width: 48%;
+  }
+}
+
+//Change Bootstrap
+input[type=checkbox] {
+  margin: 0;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  &--checkbox {
+    border: 1px solid #9a9999;
+    width: 21px;
+    height: 21px;
+    border-radius: 0;
+    color: #9a9999;
+    text-align: center;
+  }
+  &--value {
+    visibility: hidden;
+  }
+}
+
+.submit {
+  display: flex;
+  justify-content: space-between;
+  &--button {
+    background-color: $yellowColor;
+    width: 120px;
+    height: 50px;
+    color: $btnColor;
+    border: none;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  &--legal {
+    font-size: 16px;
+    font-weight: 400;
+    color: $copyColor;
+  }
+  &--social {
+    display: flex;
+    list-style: none;
+  }
 }
 
 /////////////
