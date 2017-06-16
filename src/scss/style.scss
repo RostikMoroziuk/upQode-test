@@ -1,0 +1,70 @@
+//Import font for document
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+//Colors
+$logoColor: #503392;
+$logoSubColor: #009dda;
+$navColor: rgba(35, 35, 35, 0.5);
+$searchColor: #e6e2ef;
+
+//Fonts
+$logoFont: "BEYNO", sans-serif;
+$mainFont: 'Lato', sans-serif;
+
+//Font size
+$logoSize: 30px;
+$navItemSize: 16px;
+
+body {
+  font-family: $mainFont;
+}
+
+/////////////
+//Header
+////////////
+.logo {
+  font-family: $logoFont;
+  font-size: $logoSize;
+  font-weight: 400;
+  text-transform: uppercase;
+  &--first {
+    color: $logoColor;
+  }
+  &--second {
+    color: $logoSubColor;
+  }
+}
+
+.nav--item {
+  color: $navColor;
+  font-size: $navItemSize;
+  font-weight: 400;
+}
+
+.search {
+  width: 180px;
+  height: 31px;
+  background-color: $searchColor;
+  border: none;
+  &--icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+//Change Bootstrap style
+.menu3 {
+  top: 0;
+  margin: 0;
+}
+
+//////////////
+//Footer
+/////////////
+.contacts,
+.js-map {
+  height: 634px;
+  width: 100%;
+}
