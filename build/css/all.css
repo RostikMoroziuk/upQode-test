@@ -21,7 +21,9 @@ body {
 .nav--item {
   color: rgba(35, 35, 35, 0.5);
   font-size: 16px;
-  font-weight: 400; }
+  font-weight: 400;
+  padding-right: 0 !important;
+  padding-left: 0 !important; }
 
 .search {
   width: 180px;
@@ -34,11 +36,29 @@ body {
     top: 50%;
     transform: translateY(-50%); }
 
+.dropdown-menu {
+  min-width: 183px;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  border-top: 2px solid #fff200;
+  left: 0; }
+
+.menu--item {
+  color: #fdfdfd !important; }
+  .menu--item:hover {
+    color: #e1d407 !important;
+    background-color: transparent !important; }
+
 .menu3 {
   top: 0;
-  margin: 0; }
+  margin: 0;
+  z-index: -1; }
 
 .contacts,
 .js-map {
   height: 634px;
   width: 100%; }
+
+@media (min-width: 768px) {
+  .navbar-right .dropdown-menu {
+    left: 0; } }

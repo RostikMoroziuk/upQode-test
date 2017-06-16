@@ -1,20 +1,28 @@
 //Import font for document
 @import url('https://fonts.googleapis.com/css?family=Lato');
-
 //Colors
 $logoColor: #503392;
 $logoSubColor: #009dda;
-$navColor: rgba(35, 35, 35, 0.5);
+$navColor: rgba(35,
+35,
+35,
+0.5);
 $searchColor: #e6e2ef;
-
+$menuColor: rgba(0,
+0,
+0,
+0.65);
+$yellowColor: #fff200;
+$whiteColor: #fdfdfd;
+$menuItemHoverColor: #e1d407;
 //Fonts
-$logoFont: "BEYNO", sans-serif;
-$mainFont: 'Lato', sans-serif;
-
+$logoFont: "BEYNO",
+sans-serif;
+$mainFont: 'Lato',
+sans-serif;
 //Font size
 $logoSize: 30px;
 $navItemSize: 16px;
-
 body {
   font-family: $mainFont;
 }
@@ -39,6 +47,9 @@ body {
   color: $navColor;
   font-size: $navItemSize;
   font-weight: 400;
+  //Change Bootstrap
+  padding-right: 0 !important;
+  padding-left: 0 !important;
 }
 
 .search {
@@ -55,9 +66,27 @@ body {
 }
 
 //Change Bootstrap style
+.dropdown-menu {
+  min-width: 183px;
+  border-radius: 0;
+  background-color: $menuColor;
+  border-top: 2px solid $yellowColor;
+  left: 0;
+}
+
+.menu--item {
+  //Id is incorrect in BEM
+  color: $whiteColor !important;
+  &:hover {
+    color: $menuItemHoverColor !important;
+    background-color: transparent !important;
+  }
+}
+
 .menu3 {
   top: 0;
   margin: 0;
+  z-index: -1;
 }
 
 //////////////
@@ -67,4 +96,14 @@ body {
 .js-map {
   height: 634px;
   width: 100%;
+}
+
+/////////////
+//Media query
+////////////
+@media (min-width: 768px) {
+  //Change Bootstrap
+  .navbar-right .dropdown-menu {
+    left: 0;
+  }
 }

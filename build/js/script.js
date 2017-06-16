@@ -29,9 +29,9 @@ $(function () {
         left: parentDropdownWidth
       });
     }, function () { //hover out
-      $(this).find('.dropdown-menu').eq(0).animate({ //right slide
+      $(this).find('.dropdown-menu').eq(0).hide().animate({ //right slide
         left: 0
-      }).hide()
+      })
     });
   }
 
