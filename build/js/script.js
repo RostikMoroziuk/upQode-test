@@ -35,6 +35,11 @@ $(function () {
     });
   }
 
+  //Bootstrap carousel
+  $('.carousel').carousel({
+    interval: 2000000
+  })
+
   window.initMap = initMap;
   menu();
 });

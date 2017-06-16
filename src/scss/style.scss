@@ -7,7 +7,7 @@ $navColor: rgba(35,
 35,
 35,
 0.5);
-$searchColor: #e6e2ef;
+$searchColor: #e4e4f1;
 $menuColor: rgba(0,
 0,
 0,
@@ -15,6 +15,14 @@ $menuColor: rgba(0,
 $yellowColor: #fff200;
 $whiteColor: #fdfdfd;
 $menuItemHoverColor: #e1d407;
+$arrowsBgColor: rgba(255,
+255,
+255,
+.2);
+$indicatorBgColor: #b7b7b7;
+$blackColor: #232323;
+$advantagesColor: #999999;
+$cardColor: #503392;
 //Fonts
 $logoFont: "BEYNO",
 sans-serif;
@@ -30,6 +38,14 @@ body {
 /////////////
 //Header
 ////////////
+.header--navbar {
+  height: 70px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+//Brand logo
 .logo {
   font-family: $logoFont;
   font-size: $logoSize;
@@ -46,17 +62,23 @@ body {
 .nav--item {
   color: $navColor;
   font-size: $navItemSize;
-  font-weight: 400;
-  //Change Bootstrap
+  font-weight: 400; //Change Bootstrap
   padding-right: 0 !important;
   padding-left: 0 !important;
+  margin: 0 20px;
+  &:hover {
+    background: none;
+  }
 }
 
+//search field in navigation
 .search {
-  width: 180px;
+  //Change Bootstrap
+  width: 180px !important;
   height: 31px;
   background-color: $searchColor;
   border: none;
+  border-radius: 0;
   &--icon {
     position: absolute;
     right: 10px;
@@ -89,6 +111,138 @@ body {
   z-index: -1;
 }
 
+//Change Bootstrap
+//arrows
+.carousel-control {
+  width: 8%;
+  &.left {
+    background-image: none;
+  }
+  &.right {
+    background-image: none;
+  }
+  & .glyphicon {
+    width: 60px;
+    height: 60px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 60px;
+    background-color: $arrowsBgColor;
+    z-index: 1;
+  }
+}
+
+.carousel-caption {
+  position: absolute;
+  width: 70%;
+  top: 0;
+  left: 15%;
+  height: 100%; //Centering caption
+  display: flex;
+  align-items: center;
+}
+
+//caption on banner
+.caption {
+  &--header {
+    font-weight: 700;
+    font-size: 64px;
+    text-transform: uppercase;
+    &-styled {
+      color: $yellowColor;
+    }
+  }
+  &--description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+}
+
+//Change Bootstrap
+//indicator of current slide
+.carousel-indicators {
+  & li {
+    width: 7px;
+    height: 7px;
+    background-color: $indicatorBgColor;
+    border: none;
+  }
+  & .active {
+    background-color: white;
+    width: 7px;
+    height: 7px;
+    margin: 1px;
+    border: none;
+  }
+}
+
+//Cross-browser gradient effect 
+.carousel--filter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background: linear-gradient(-71deg, #503392 0%, #55359b 23%, #673ab7 49%, #00bff3 100%);
+  opacity: .8;
+}
+
+///////////////
+//Why choose us
+///////////////
+//Header in section
+.advantages {
+  &--header {
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: $blackColor;
+    &-styled {
+      color: $logoSubColor;
+    }
+  }
+  &--description {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $advantagesColor;
+  }
+}
+
+//cards in why choose us section
+.cards {
+  display: flex;
+  justify-content: space-between;
+}
+//item in cards section (like, comment, flags..)
+.card {
+  width: 200px;
+  height: 270px;
+  text-align: center;
+  border: 1px solid #ebebeb;
+  //Icon
+  &--image {
+    color: $cardColor;
+  }
+  //Text content with title
+  &--content {
+    &-header {
+      color: $blackColor;
+    }
+    &-text {
+      color: $advantagesColor;
+    }
+    //Visisible section on hover in card
+    &-hover {
+      display: none;
+      color: white;
+    }
+  }
+}
+
 //////////////
 //Footer
 /////////////
@@ -105,5 +259,8 @@ body {
   //Change Bootstrap
   .navbar-right .dropdown-menu {
     left: 0;
+  }
+  .header--navbar {
+    border-radius: 0;
   }
 }

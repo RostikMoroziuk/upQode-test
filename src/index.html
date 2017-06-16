@@ -98,11 +98,29 @@
 
     <!--Carousel banner-->
     <div class="carousel slide" id="carousel-banner" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-banner" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-banner" data-slide-to="1"></li>
+        <li data-target="#carousel-banner" data-slide-to="2"></li>
+      </ol>
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
           <div class="carousel--filter"></div>
-          <img src="img/banner.png" alt="design">
+          <img src="img/banner.png" alt="design" class="img-responsive">
+          <div class="carousel-caption">
+            <div class="caption">
+              <h1 class="caption--header">creative <span class="caption--header-styled">design agency</span></h1>
+              <h5 class="caption--description">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida
+                at eget metus. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Donec
+                sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.
+                Aenean lacinia bibendum nulla sed consectetur. </h5>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="carousel--filter"></div>
+          <img src="img/banner.png" alt="design" class="img-responsive">
           <div class="carousel-caption">
             <div class="caption">
               <h1 class="caption--header">creative <span class="creative--header-styled">design agency</span></h1>
@@ -115,20 +133,7 @@
         </div>
         <div class="item">
           <div class="carousel--filter"></div>
-          <img src="img/banner.png" alt="design">
-          <div class="carousel-caption">
-            <div class="caption">
-              <h1 class="caption--header">creative <span class="creative--header-styled">design agency</span></h1>
-              <h5 class="caption--description">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida
-                at eget metus. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Donec
-                sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.
-                Aenean lacinia bibendum nulla sed consectetur. </h5>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="carousel--filter"></div>
-          <img src="img/banner.png" alt="design">
+          <img src="img/banner.png" alt="design" class="img-responsive">
           <div class="carousel-caption">
             <div class="caption">
               <h1 class="caption--header">creative <span class="creative--header-styled">design agency</span></h1>
@@ -164,7 +169,7 @@
       <div class="cards">
         <!--Likes-->
         <article class="cards--item card">
-          <img src="#" alt="like" class="card--img">
+          <span class="fa fa-heart-o card--img"></span>
           <div class="card--content">
             <h4 class="card--content-header">your title</h4>
             <div class="card--content-text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
@@ -179,7 +184,7 @@
         </article>
         <!--Comments-->
         <article class="cards--item card">
-          <img src="#" alt="like" class="card--img">
+          <span class="fa fa-commenting-o card--img"></span>
           <div class="card--content">
             <h4 class="card--content-header">your title</h4>
             <div class="card--content-text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
@@ -194,7 +199,7 @@
         </article>
         <!--Information-->
         <article class="cards--item card">
-          <img src="#" alt="like" class="card--img">
+          <span class="fa fa-laptop card--img"></span>
           <div class="card--content">
             <h4 class="card--content-header">your title</h4>
             <div class="card--content-text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
@@ -209,7 +214,7 @@
         </article>
         <!--Star-->
         <article class="cards--item card">
-          <img src="#" alt="like" class="card--img">
+          <span class="fa fa-star-o card--img"></span>
           <div class="card--content">
             <h4 class="card--content-header">your title</h4>
             <div class="card--content-text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
@@ -224,7 +229,7 @@
         </article>
         <!--Flags-->
         <article class="cards--item card">
-          <img src="#" alt="like" class="card--img">
+          <span class="fa fa-flag-o card--img"></span>
           <div class="card--content">
             <h4 class="card--content-header">your title</h4>
             <div class="card--content-text">Duis bibendum diam non erat facilaisis en ter tincidunt. Duis</div>
@@ -232,8 +237,8 @@
           <div class="card--content card--content-hover">
             <h4 class="card--content-title">see more</h4>
             <div class="card--content-images details">
-              <img src="#" alt="share" class="details-image">
-              <img src="#" alt="zoom +" class="details-image">
+              <span class="fa fa-link details-image"></span>
+              <span class="fa fa-search-plus details-image"></span>
             </div>
           </div>
         </article>
