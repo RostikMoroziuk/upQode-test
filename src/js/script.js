@@ -13,7 +13,7 @@ $(function () {
     });
   }
 
-  function menu() {
+  function init() {
     //Dropdown menu second level on hover
     $('ul.nav > li.dropdown').hover(function () { //hover on
       $(this).find('.dropdown-menu').eq(0).slideDown();
@@ -33,6 +33,15 @@ $(function () {
         left: 0
       })
     });
+
+    //card on why choose us hover 
+    $(".card").hover(function() {//hover on
+      console.log($(this).find(".card--content-hover"));
+      $(this).find(".card--content-hover").css({height: "149px"});
+    },
+    function() {//hover out
+      $(this).find(".card--content-hover").css({height: "0"});
+    })
   }
 
   //Bootstrap carousel
@@ -41,5 +50,5 @@ $(function () {
   })
 
   window.initMap = initMap;
-  menu();
+  init();
 });

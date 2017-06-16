@@ -126,14 +126,19 @@ body {
   font-weight: 700;
   line-height: 24px;
   text-transform: uppercase;
-  color: #232323; }
+  text-align: center;
+  color: #232323;
+  margin: 40px; }
   .advantages--header-styled {
     color: #009dda; }
 .advantages--description {
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
-  color: #999999; }
+  color: #999999;
+  width: 670px;
+  text-align: center;
+  margin: 0 auto 100px; }
 
 .cards {
   display: flex;
@@ -143,16 +148,41 @@ body {
   width: 200px;
   height: 270px;
   text-align: center;
-  border: 1px solid #ebebeb; }
-  .card--image {
-    color: #503392; }
-  .card--content-header {
-    color: #232323; }
-  .card--content-text {
-    color: #999999; }
-  .card--content-hover {
-    display: none;
-    color: white; }
+  border: 1px solid #ebebeb;
+  position: relative;
+  overflow: hidden; }
+  .card--img {
+    color: #503392;
+    font-size: 60px;
+    font-weight: 400;
+    margin: 20px 0; }
+  .card--content {
+    text-align: center;
+    width: 160px;
+    font-size: 14px;
+    margin: 0 auto; }
+    .card--content-header {
+      color: #232323;
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 14px; }
+    .card--content-text {
+      color: #999999;
+      font-weight: 400;
+      line-height: 20px; }
+    .card--content-hover {
+      height: 0;
+      width: 100%;
+      background-color: #503392;
+      transition: .6s;
+      position: absolute;
+      bottom: 0;
+      color: white; }
+    .card--content-title {
+      text-transform: uppercase; }
+
+.details--image-inverse {
+  color: #503392; }
 
 .contacts,
 .js-map {

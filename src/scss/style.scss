@@ -199,7 +199,9 @@ body {
     font-weight: 700;
     line-height: 24px;
     text-transform: uppercase;
+    text-align: center;
     color: $blackColor;
+    margin: 40px;
     &-styled {
       color: $logoSubColor;
     }
@@ -209,6 +211,9 @@ body {
     font-weight: 400;
     line-height: 24px;
     color: $advantagesColor;
+    width: 670px;
+    text-align: center;
+    margin: 0 auto 100px;
   }
 }
 
@@ -223,25 +228,53 @@ body {
   height: 270px;
   text-align: center;
   border: 1px solid #ebebeb;
+  //relate for hovering block
+  position: relative;
+  overflow: hidden;
   //Icon
-  &--image {
+  &--img {
     color: $cardColor;
+    font-size: 60px;
+    font-weight: 400;
+    margin: 20px 0;
   }
   //Text content with title
   &--content {
+    text-align: center;
+    width: 160px;
+    font-size: 14px;
+    margin: 0 auto;
     &-header {
       color: $blackColor;
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 14px;
     }
     &-text {
       color: $advantagesColor;
+      font-weight: 400;
+      line-height: 20px;
     }
     //Visisible section on hover in card
     &-hover {
-      display: none;
+      height: 0;
+      width: 100%;
+      background-color: $cardColor;
+      transition: .6s;
+      position: absolute;
+      bottom: 0;
       color: white;
+    }
+    &-title {
+      text-transform: uppercase;
     }
   }
 }
+
+.details--image-inverse {
+  color: $cardColor;
+}
+
 
 //////////////
 //Footer
