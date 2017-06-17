@@ -41,8 +41,6 @@ $(function () {
       $(this).find(".js-dropdown--carret").eq(0).removeClass("fa-angle-double-right").addClass("fa-angle-right");
     });
 
-    
-
     //card on why choose us hover 
     $(".card").hover(function () { //hover on
         console.log($(this).find(".card--content-hover"));
@@ -72,6 +70,11 @@ $(function () {
 
       $(".dots--dot-active").removeClass("dots--dot-active");
       dot.addClass("dots--dot-active");
+    })
+
+    //Checkbox in contacts 
+    $(".check--checkbox").on("click", function() {
+      $(this).find(".check--value-mark").toggleClass("fa-check");
     })
   }
 
