@@ -15,29 +15,17 @@ $(function () {
 
   function init() {
     //Dropdown menu second level on hover
-    $('ul.nav > li.dropdown').hover(function () { //hover on
-      $(this).find('.dropdown-menu').eq(0).slideDown();
-    }, function () { //hover out
-      $(this).find('.dropdown-menu').eq(0).slideUp();
-    });
+    $('ul.nav > li.dropdown').hover(submenuHoverOn, submenuHoverOut)
 
     //Dropdown menu third level on hover
     var parentDropdownWidth = $('.nav > .dropdown > .dropdown-menu').eq(0) //2nd level menu
       .width();
-    $('.dropdown-menu > li.dropdown').hover(function () { //hover on
-      $(this).find('.dropdown-menu').eq(0).show().animate({ //right slide
-        left: parentDropdownWidth
-      });
-    }, function () { //hover out
-      $(this).find('.dropdown-menu').eq(0).hide().animate({ //right slide
-        left: 0
-      })
-    });
+    $('.dropdown-menu > li.dropdown').hover(submenu3HoverOn, submenu3HoverOut);
 
     //Change shevron on hover
-    $(".menu--item").hover(function() {
+    $(".menu--item").hover(function () {
       $(this).find(".js-dropdown--carret").eq(0).removeClass("fa-angle-right").addClass("fa-angle-double-right");
-    }, function() {
+    }, function () {
       $(this).find(".js-dropdown--carret").eq(0).removeClass("fa-angle-double-right").addClass("fa-angle-right");
     });
 
@@ -53,17 +41,17 @@ $(function () {
           height: "0"
         });
       })
-    
+
     //Change page on our product
-    $(".dots--dot").on("click", function() {
+    $(".dots--dot").on("click", function () {
       //target dot
       var dot = $(this);
-      if(dot.find(".dots--dot-active").length > 0) {//if click on current page
+      if (dot.find(".dots--dot-active").length > 0) { //if click on current page
         return;
       }
       var pageIndex = dot.attr("data-index");
       //change active page
-      $(".products--content-active").fadeOut(200, function() {
+      $(".products--content-active").fadeOut(200, function () {
         $(".products--content-active").removeClass("products--content-active");
         $(".products--content").eq(pageIndex).fadeIn(200).addClass("products--content-active");
       });
@@ -73,9 +61,96 @@ $(function () {
     })
 
     //Checkbox in contacts 
-    $(".check--checkbox").on("click", function() {
+    $(".check--checkbox").on("click", function () {
       $(this).find(".check--value-mark").toggleClass("fa-check");
     })
+
+    //Links 
+    $(".navbar").on("click", "a", function (event) {
+      console.log("sc");
+      event.preventDefault();
+      var id = $(this).attr('href');
+      var top = $(id).offset().top; // - height of menu
+      $('body,html').animate({
+        scrollTop: top
+      }, 1500);
+    });
+
+    //Fixe menu
+    if ($(document).scrollTop() > 70) {
+      $(".header--navbar").addClass("header--fixed")
+        .find("[data-menu]").addClass("menu--color");
+      $(".carousel").addClass("content--offset ");
+    }
+    $(document).scroll(function () {
+      //More than height of menu
+      if ($(this).scrollTop() > 70) {
+        $(".header--navbar").addClass("header--fixed")
+          .find("[data-menu]").addClass("menu--color");
+        $(".carousel").addClass("content--offset ");
+      } else {
+        $(".header--navbar").removeClass("header--fixed")
+          .find("[data-menu]").removeClass("menu--color");
+        $(".carousel").removeClass("content--offset ");
+      }
+    });
+
+    //change menu for mobile
+    if ($(".header--navbar").width() <= 1007) { //width of navigation header without containers and row (bootstrap)
+      mobileMenu()
+    }
+    $(window).on("resize", function () {
+      if ($(".header--navbar").width() <= 1007) { //width of navigation header without containers and row (bootstrap)
+        mobileMenu()
+      } else {
+        desktopMenu()
+      }
+    });
+
+    //show sub menu 3rd level
+    $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function (event) {
+      // Avoid following the href location when clicking
+      event.preventDefault();
+      // Avoid having the menu to close when clicking
+      event.stopPropagation();
+      // If a menu is already open we close it
+      $(this).parent().toggleClass('open');
+    });
+
+    //Submen in navigation
+    function submenuHoverOn() { //hover on
+      $(this).find('.dropdown-menu').eq(0).slideDown();
+    }
+
+    function submenuHoverOut() {
+      $(this).find('.dropdown-menu').eq(0).slideUp();
+    }
+
+    function submenu3HoverOn() { //hover on
+      $(this).find('.dropdown-menu').eq(0).show().animate({ //right slide
+        left: parentDropdownWidth
+      });
+    }
+
+    function submenu3HoverOut() {
+      $(this).find('.dropdown-menu').eq(0).hide().animate({ //right slide
+        left: 0
+      })
+    }
+
+    //In mobile menu remove showing submenu on hover
+    function mobileMenu() {
+      $(".dropdown.navbar--item").find("a[data-toggle='dropdown']").attr("href", "#"); //for dropdown must be only # link
+      $("ul.nav > li.dropdown").off("mouseenter mouseleave"); //disable showing 2 and
+      $(".dropdown-menu > li.dropdown").off("mouseenter mouseleave"); // 3 menu on hover
+    }
+
+    //Desktop version of menu
+    function desktopMenu() {
+      $("[data-product]").attr("href", "#products"); //add link
+      $("ul.nav > li.dropdown").hover(submenuHoverOn, submenuHoverOut); //disable showing 2 and
+      $(".dropdown-menu > li.dropdown").hover(submenu3HoverOn, submenu3HoverOut); // 3 menu on hover
+    }
   }
 
   //Draw svg filter for header in our products section
@@ -91,15 +166,15 @@ $(function () {
 
     var triangleEnd = 100 - triangleStart;
     console.log(triangleStart, triangleEnd);
-    path.attr("d", "M0,0 L 100,0 100 " + HEADER_HEIGHT + " " + triangleEnd + "," + HEADER_HEIGHT
-    + " 50,100 " + triangleStart + "," + HEADER_HEIGHT + " " + 0 + "," +  HEADER_HEIGHT + "Z");
+    path.attr("d", "M0,0 L 100,0 100 " + HEADER_HEIGHT + " " + triangleEnd + "," + HEADER_HEIGHT +
+      " 50,100 " + triangleStart + "," + HEADER_HEIGHT + " " + 0 + "," + HEADER_HEIGHT + "Z");
 
   }
 
   window.initMap = initMap;
   //Bootstrap carousel
 
-  drawFilter()
+  drawFilter();
   $('.carousel').carousel({
     interval: 2000000
   })
