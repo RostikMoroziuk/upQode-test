@@ -34,6 +34,15 @@ $(function () {
       })
     });
 
+    //Change shevron on hover
+    $(".menu--item").hover(function() {
+      $(this).find(".js-dropdown--carret").eq(0).removeClass("fa-angle-right").addClass("fa-angle-double-right");
+    }, function() {
+      $(this).find(".js-dropdown--carret").eq(0).removeClass("fa-angle-double-right").addClass("fa-angle-right");
+    });
+
+    
+
     //card on why choose us hover 
     $(".card").hover(function () { //hover on
         console.log($(this).find(".card--content-hover"));

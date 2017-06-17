@@ -33,8 +33,8 @@ sans-serif;
 $mainFont: 'Lato',
 sans-serif;
 //Font size
-$logoSize: 30px;
-$navItemSize: 16px;
+$logoSize: 18px;
+$navItemSize: 15px;
 body {
   font-family: $mainFont;
 }
@@ -43,18 +43,19 @@ body {
 //Header
 ////////////
 .header--navbar {
-  height: 70px;
+  height: 60px;
   margin-bottom: 0;
-  display: flex;
-  align-items: center;
+  border: none;
 }
 
 //Brand logo
 .logo {
   font-family: $logoFont;
   font-size: $logoSize;
-  font-weight: 400;
+  font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 2px; //Change Bootstrap
+  margin-left: 72px !important;
   &--first {
     color: $logoColor;
   }
@@ -63,37 +64,66 @@ body {
   }
 }
 
-.nav--item {
-  color: $navColor;
-  font-size: $navItemSize;
-  font-weight: 400; //Change Bootstrap
-  padding-right: 0 !important;
-  padding-left: 0 !important;
-  margin: 0 20px;
-  &:hover {
-    background: none;
+//Bootstrap
+.navbar-header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  margin-right: 77px !important;
+  height: 60px;
+  &--item {
+    color: $navColor;
+    font-size: $navItemSize;
+    font-weight: 400;
+    padding: 20px 0 !important; //Change Bootstrap
+    margin: 0;
+    &:hover {
+      background: none;
+    }
   }
 }
 
+// //Navigation menu
+// .navbar .dropdown a {
+//   padding: 20px 0;
+// }
+li.navbar--item {
+  height: 100%;
+  margin: 0 23.5px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar--item:last-child {
+  margin: 0;
+}
+
+// .navbar-brand {
+//   padding: 22px 16px;
+// }
 //search field in navigation
 .search {
   //Change Bootstrap
-  width: 180px !important;
-  height: 31px;
+  width: 150px !important;
+  height: 25px;
   background-color: $searchColor;
   border: none;
   border-radius: 0;
   &--icon {
     position: absolute;
-    right: 10px;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
+    font-size: 12px;
   }
 }
 
 //Change Bootstrap style
 .dropdown-menu {
-  min-width: 183px;
+  min-width: 155px;
   border-radius: 0;
   background-color: $menuColor;
   border-top: 2px solid $yellowColor;
@@ -103,22 +133,43 @@ body {
 .menu--item {
   //Id is incorrect in BEM
   color: $whiteColor !important;
+  font-size: 13px;
   &:hover {
     color: $menuItemHoverColor !important;
     background-color: transparent !important;
   }
 }
 
-.menu3 {
+//items in 2nd and 3rd level menu
+.dropdown--item {
+  margin-bottom: 6px;
+  &:first-child {
+    margin-top: 11px;
+  }
+  &:last-child {
+    margin-bottom: 15px;
+  }
+}
+
+.dropdown--item .menu3 {
   top: 0;
   margin: 0;
   z-index: -1;
 }
 
+.dropdown-menu>li>a {
+  //change Bootstrap
+  padding: 3px 15px;
+}
+
+//carousel indicator
+ol {
+  margin-bottom: 8px;
+}
+
 //Change Bootstrap
 //arrows
 .carousel-control {
-  width: 8%;
   &.left {
     background-image: none;
   }
@@ -126,13 +177,20 @@ body {
     background-image: none;
   }
   & .glyphicon {
-    width: 60px;
-    height: 60px;
-    font-size: 14px;
-    text-align: center;
-    line-height: 60px;
+    width: 50px;
+    height: 50px;
+    font-size: 8px;
+    line-height: 50px;
     background-color: $arrowsBgColor;
     z-index: 1;
+    &-chevron-left {
+      left: 17%;
+      top: 48%;
+    }
+    &-chevron-right {
+      right: 17%;
+      top: 48%;
+    }
   }
 }
 
@@ -144,22 +202,30 @@ body {
   height: 100%; //Centering caption
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 //caption on banner
 .caption {
+  position: relative;
+  top: -20px;
   &--header {
-    font-weight: 700;
-    font-size: 64px;
+    font-weight: 600;
+    font-size: 54px;
+    letter-spacing: 1px;
     text-transform: uppercase;
+    margin-bottom: 21px;
     &-styled {
       color: $yellowColor;
     }
   }
   &--description {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
-    line-height: 30px;
+    line-height: 27px;
+    width: 633px;
+    text-align: center;
+    margin: 0 auto;
   }
 }
 
