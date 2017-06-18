@@ -69,7 +69,7 @@ $(function () {
       event.preventDefault();
       var id = $(this).attr('href');
       if (id != "#") {
-        var top = $(id).offset().top; // - height of menu
+        var top = $(id).offset().top - 70; // - height of menu
         $('body,html').animate({
           scrollTop: top
         }, 1500);
