@@ -66,6 +66,10 @@ li.navbar--item {
   margin: 0 31px;
   z-index: 10; }
 
+.navbar--item-active {
+  color: #503392;
+  font-weight: 600; }
+
 .navbar--item:last-child {
   margin: 0; }
 

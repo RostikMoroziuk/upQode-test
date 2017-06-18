@@ -83,8 +83,9 @@ $(function () {
       $(".carousel").addClass("content--offset ");
     }
     $(document).scroll(function () {
+      var scrollTop = $(this).scrollTop();
       //More than height of menu
-      if ($(this).scrollTop() > 70) {
+      if (scrollTop > 70) {
         $(".header--navbar").addClass("header--fixed")
           .find("[data-menu]").addClass("menu--color");
         $(".carousel").addClass("content--offset ");
@@ -92,6 +93,21 @@ $(function () {
         $(".header--navbar").removeClass("header--fixed")
           .find("[data-menu]").removeClass("menu--color");
         $(".carousel").removeClass("content--offset ");
+      }
+
+      //Activate section link
+      $(".navbar--item-active").removeClass("navbar--item-active");
+      //Section position constant
+      var HOME = $("#home").offset().top,
+        PRODUCTS = $("#products").offset().top,
+        CONTACT = $("#contact").offset().top;
+      console.log(HOME, PRODUCTS, CONTACT);
+      if (scrollTop >= CONTACT) {
+        $("a[href='#contact']").addClass("navbar--item-active");
+      } else if (scrollTop >= PRODUCTS) {
+        $("a[href='#products']").addClass("navbar--item-active");
+      } else if (scrollTop >= HOME) {
+        $("a[href='#home']").addClass("navbar--item-active");
       }
     });
 
@@ -125,7 +141,7 @@ $(function () {
 
     function carouselPlay() {
       $('.carousel-control.right').trigger('click');
-      setTimeout(carouselPlay, Math.random() * 10000 + 10000);//min interval 10s
+      setTimeout(carouselPlay, Math.random() * 10000 + 10000); //min interval 10s
     }
 
     //Submen in navigation
