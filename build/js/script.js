@@ -31,7 +31,6 @@ $(function () {
 
     //card on why choose us hover 
     $(".card").hover(function () { //hover on
-        console.log($(this).find(".card--content-hover"));
         $(this).find(".card--content-hover").css({
           height: "149px"
         });
@@ -67,13 +66,14 @@ $(function () {
 
     //Links 
     $(".navbar").on("click", "a", function (event) {
-      console.log("sc");
       event.preventDefault();
       var id = $(this).attr('href');
-      var top = $(id).offset().top; // - height of menu
-      $('body,html').animate({
-        scrollTop: top
-      }, 1500);
+      if (id != "#") {
+        var top = $(id).offset().top; // - height of menu
+        $('body,html').animate({
+          scrollTop: top
+        }, 1500);
+      }
     });
 
     //Fixe menu
@@ -96,11 +96,12 @@ $(function () {
     });
 
     //change menu for mobile
-    if ($(".header--navbar").width() <= 1007) { //width of navigation header without containers and row (bootstrap)
+    if ($("body").width() <= 1024) { //width of navigation header without scrollbar
       mobileMenu()
     }
     $(window).on("resize", function () {
-      if ($(".header--navbar").width() <= 1007) { //width of navigation header without containers and row (bootstrap)
+      drawFilter(); //redraw svg filter
+      if ($("body").width() <= 1024) { //width of navigation header without scrollbar
         mobileMenu()
       } else {
         desktopMenu()
@@ -109,13 +110,23 @@ $(function () {
 
     //show sub menu 3rd level
     $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function (event) {
-      // Avoid following the href location when clicking
-      event.preventDefault();
-      // Avoid having the menu to close when clicking
-      event.stopPropagation();
-      // If a menu is already open we close it
-      $(this).parent().toggleClass('open');
+      event.preventDefault(); // Avoid following the href location when clicking
+      event.stopPropagation(); // Avoid having the menu to close when clicking
+      $(this).parent().toggleClass('open'); // If a menu is already open we close it
     });
+
+    //Play with different interval
+    $('.carousel').carousel({
+      autoplay: true
+    });
+    setTimeout(carouselPlay, Math.random() * 10000 + 10000);
+
+    drawFilter();
+
+    function carouselPlay() {
+      $('.carousel-control.right').trigger('click');
+      setTimeout(carouselPlay, Math.random() * 10000 + 10000);//min interval 10s
+    }
 
     //Submen in navigation
     function submenuHoverOn() { //hover on
@@ -143,6 +154,7 @@ $(function () {
       $(".dropdown.navbar--item").find("a[data-toggle='dropdown']").attr("href", "#"); //for dropdown must be only # link
       $("ul.nav > li.dropdown").off("mouseenter mouseleave"); //disable showing 2 and
       $(".dropdown-menu > li.dropdown").off("mouseenter mouseleave"); // 3 menu on hover
+      $(".navbar-collapse").addClass("collapse--menu menu--color");
     }
 
     //Desktop version of menu
@@ -150,6 +162,7 @@ $(function () {
       $("[data-product]").attr("href", "#products"); //add link
       $("ul.nav > li.dropdown").hover(submenuHoverOn, submenuHoverOut); //disable showing 2 and
       $(".dropdown-menu > li.dropdown").hover(submenu3HoverOn, submenu3HoverOut); // 3 menu on hover
+      $(".navbar-collapse").removeClass("collapse--menu menu--color");
     }
   }
 
@@ -165,7 +178,6 @@ $(function () {
     triangleStart = ((triangleStart / parentWidth) * 100).toFixed(2); //in percentage
 
     var triangleEnd = 100 - triangleStart;
-    console.log(triangleStart, triangleEnd);
     path.attr("d", "M0,0 L 100,0 100 " + HEADER_HEIGHT + " " + triangleEnd + "," + HEADER_HEIGHT +
       " 50,100 " + triangleStart + "," + HEADER_HEIGHT + " " + 0 + "," + HEADER_HEIGHT + "Z");
 
@@ -173,11 +185,6 @@ $(function () {
 
   window.initMap = initMap;
   //Bootstrap carousel
-
-  drawFilter();
-  $('.carousel').carousel({
-    interval: 2000000
-  })
 
   init();
 

@@ -5,6 +5,9 @@
   font-weight: normal;
   font-style: normal; }
 @import url("https://fonts.googleapis.com/css?family=Lato");
+html {
+  min-width: 320px; }
+
 body {
   font-family: "Lato", sans-serif; }
 
@@ -19,6 +22,11 @@ body {
 
 .menu--color {
   background-color: #8eb4ff; }
+
+.collapse--menu {
+  position: fixed;
+  z-index: 1;
+  margin-left: -15px !important; }
 
 .content--offset {
   margin-top: 70px; }
@@ -156,6 +164,7 @@ ol {
     height: 7px; }
 
 .caption {
+  width: 100%;
   position: relative;
   top: -28px; }
   .caption--header {
@@ -211,7 +220,8 @@ ol {
 
 .cards {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  flex-wrap: wrap; }
 
 .card {
   width: 200px;
@@ -261,7 +271,7 @@ ol {
   color: #503392; }
 
 .products {
-  background: url("../img/bg-polygon.png") no-repeat center;
+  background: url("../img/bg-polygon.png") center;
   position: relative;
   margin-bottom: 120px; }
   .products--title {
@@ -294,7 +304,7 @@ ol {
   color: #fff200; }
 
 .noise {
-  background: url("../img/bg-noise.png") no-repeat center;
+  background: url("../img/bg-noise.png") center;
   position: absolute;
   opacity: .2;
   width: 100%;
@@ -308,12 +318,12 @@ ol {
   z-index: 1; }
 
 .product {
-  display: flex; }
+  display: flex;
+  margin-bottom: 103px; }
   .product--image {
     width: 145px;
     height: 145px;
-    margin-right: 26px;
-    margin-bottom: 103px; }
+    margin-right: 26px; }
   .product--title {
     color: #232323;
     font-size: 24px;
@@ -433,8 +443,11 @@ ol {
 .email {
   position: relative; }
 
+.ouremail {
+  position: relative; }
+
 .user--name,
-.email {
+.ouremail {
   width: 49%; }
 
 .message {
@@ -488,6 +501,8 @@ textarea {
     text-align: center;
     margin-right: 15px;
     position: relative; }
+  .check--checkbox:hover {
+    cursor: pointer; }
   .check--value {
     visibility: hidden; }
     .check--value-mark {
@@ -503,6 +518,9 @@ textarea {
     height: 50px;
     color: #373737;
     border: none; }
+  .submit--button:hover {
+    background-color: #503392;
+    color: white; }
 
 .address,
 .phone {
@@ -525,8 +543,16 @@ textarea {
   list-style: none;
   margin-bottom: 0; }
   .social--link {
-    padding: 13.5px; }
+    padding: 13.5px;
+    transition: .3s;
+    position: relative;
+    top: 0; }
+  .social--link:hover {
+    top: -10px; }
 
+@media (max-width: 1199px) {
+  .card {
+    margin-bottom: 20px; } }
 @media (max-width: 1024px) {
   .navbar-header {
     float: none; }
@@ -562,41 +588,6 @@ textarea {
 
   .collapsing {
     overflow: hidden !important; }
-
-  .navbar-nav .open .dropdown-menu {
-    position: static;
-    float: none;
-    width: auto;
-    margin-top: 0;
-    background-color: transparent;
-    border: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none; }
-
-  .carousel-caption .author {
-    display: none; }
-
-  .navigation {
-    background-color: #3366cc; }
-    .navigation .icon-bar {
-      background-color: #fdfdfd; }
-
-  .social {
-    height: 300px;
-    max-width: 300px; }
-
-  .photos {
-    max-width: 250px; }
-
-  .fb,
-  .nav .icon {
-    display: none; }
-
-  .pages,
-  .social,
-  .flickr,
-  .news {
-    margin-bottom: 35px; }
 
   .navigation .navbar-brand .glyphicon {
     display: inline-block; }
@@ -639,12 +630,130 @@ textarea {
 
   .nav .open > a:focus:not(:hover) {
     color: white; } }
+@media (max-width: 991px) {
+  .carousel-inner > .item > img {
+    height: 530px; }
+
+  .info {
+    width: 720px; }
+
+  .caption--header {
+    font-size: 45px; }
+  .caption--description {
+    width: auto; } }
 @media (max-width: 767px) {
+  .carousel-inner > .item > img {
+    height: 370px; }
+
   .header--navbar {
-    width: 100%; } }
+    width: 100%; }
+
+  .navbar-toggle {
+    padding: 20px; }
+  .navbar-brand.logo {
+    margin: 0 0 0 auto !important; }
+
+  .carousel-control .glyphicon {
+    width: 40px;
+    height: 40px;
+    line-height: 40px; }
+
+  .caption--header {
+    font-size: 30px; }
+  .caption--description {
+    display: none; }
+
+  .advantages--header {
+    margin: 50px 0 30px;
+    font-size: 25px; }
+  .advantages--description {
+    width: auto; }
+
+  .cards {
+    flex-direction: column;
+    align-items: center; }
+
+  .advantages,
+  .advantages--description,
+  .products--title,
+  .product,
+  .dots,
+  .headers,
+  .products {
+    margin-bottom: 50px; }
+
+  .products--title-header,
+  .contact--header {
+    font-size: 30px; }
+
+  .product--image {
+    width: 100px; }
+  .product--icon {
+    width: 100px; }
+
+  .headers {
+    width: auto; }
+
+  .dots--dot {
+    padding: 10px;
+    margin-right: 25px; }
+
+  .info {
+    height: auto;
+    width: 280px;
+    flex-direction: column-reverse;
+    justify-content: center; }
+    .info--form {
+      margin-left: 0;
+      margin-bottom: 20px;
+      width: 90%; }
+    .info--details {
+      width: 90%;
+      align-self: center;
+      margin-top: 20px; }
+
+  .address,
+  .phone,
+  .ouremail {
+    margin-bottom: 10px; }
+
+  .user {
+    flex-direction: column;
+    height: auto; }
+    .user--input {
+      margin-bottom: 10px; }
+
+  .user--name,
+  .email {
+    height: 40px; }
+
+  .user--input,
+  .email {
+    width: 100%; }
+
+  .message {
+    height: 80px; }
+
+  .check {
+    margin-bottom: 10px; }
+
+  .submit {
+    flex-direction: column; }
+    .submit--button {
+      height: 35px;
+      width: 100%; }
+
+  .footer {
+    flex-direction: column;
+    height: auto; }
+    .footer--legal {
+      margin-top: 13.5px; } }
 @media (min-width: 768px) {
   .navbar-right .dropdown-menu {
     left: 0; }
 
   .header--navbar {
-    border-radius: 0; } }
+    border-radius: 0; }
+
+  .navbar-form {
+    padding-right: 0; } }
